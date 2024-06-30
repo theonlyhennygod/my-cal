@@ -2,6 +2,7 @@
 
 ## DEMO
 
+https://github.com/theonlyhennygod/my-cal/assets/144828210/5935a9ab-9c18-4913-a6a4-34f69703d19e
 
 
 This is a simple calculator app built using the following technologies:
