@@ -33,7 +33,7 @@ const Calculator = () => {
         <input
           type="text"
           value={input}
-          className="w-full p-2 border rounded"
+          className="w-full p-2 border rounded text-black dark:text-white text-right"
           readOnly
         />
       </div>
@@ -42,7 +42,7 @@ const Calculator = () => {
           <button
             key={item}
             onClick={() => handleClick(item)}
-            className="p-4 bg-gray-200 dark:bg-gray-700 rounded"
+            className="p-4 bg-gray-200 dark:bg-gray-700 text-black dark:text-white rounded"
           >
             {item}
           </button>
@@ -51,7 +51,7 @@ const Calculator = () => {
           <button
             key={item}
             onClick={() => handleClick(item)}
-            className="p-4 bg-gray-200 dark:bg-gray-700 rounded"
+            className="p-4 bg-gray-200 dark:bg-gray-700 text-black dark:text-white rounded"
           >
             {item}
           </button>
@@ -60,7 +60,7 @@ const Calculator = () => {
           <button
             key={item}
             onClick={() => handleClick(item)}
-            className="p-4 bg-gray-200 dark:bg-gray-700 rounded"
+            className="p-4 bg-gray-200 dark:bg-gray-700 text-black dark:text-white rounded"
           >
             {item}
           </button>
@@ -71,25 +71,25 @@ const Calculator = () => {
             onClick={() =>
               item === "=" ? calculateResult() : handleClick(item)
             }
-            className="p-4 bg-gray-200 dark:bg-gray-700 rounded"
+            className="p-4 bg-gray-200 dark:bg-gray-700 text-black dark:text-white rounded"
           >
             {item}
           </button>
         ))}
         <button
           onClick={handleClear}
-          className="col-span-2 p-4 bg-red-500 text-white rounded"
+          className="col-span-2 p-4 bg-red-500 text-black dark:text-white rounded"
         >
           Clear
         </button>
         <button
           onClick={handleBackspace}
-          className="col-span-2 p-4 bg-yellow-500 text-white rounded"
+          className="col-span-2 p-4 bg-yellow-500 text-black dark:text-white rounded"
         >
           Backspace
         </button>
       </div>
-      {result && <div className="text-2xl font-bold">Result: {result}</div>}
+      {result && <div className="text-2xl font-bold flex justify-center text-black dark:text-white">Result: {result}</div>}
     </div>
   );
 };
