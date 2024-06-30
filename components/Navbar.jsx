@@ -1,47 +1,43 @@
 "use client";
 
-import { useState, useEffect } from "react";
-import { FaGithub, FaSun, FaMoon } from "react-icons/fa";
-import Image from 'next/image';
+import { useState } from "react";
+import { FaGithub } from "react-icons/fa";
+import Link from "next/link";
+import Image from "next/image";
 
-const Navbar = () => {
-  const [darkMode, setDarkMode] = useState(false);
+const NavBar = () => {
+  const [theme, setTheme] = useState("light");
 
-  useEffect(() => {
-    if (darkMode) {
+  const toggleTheme = () => {
+    if (theme === "light") {
       document.documentElement.classList.add("dark");
+      setTheme("dark");
     } else {
       document.documentElement.classList.remove("dark");
+      setTheme("light");
     }
-  }, [darkMode]);
-
-  const toggleDarkMode = () => {
-    setDarkMode((prevMode) => !prevMode);
   };
 
   return (
-    <nav className="flex justify-between items-center p-4 bg-gray-200 dark:bg-gray-800">
-      <div className="flex items-center space-x-2">
+    <nav className="flex items-center justify-between p-6 bg-gray-200 dark:bg-gray-800">
+      <Link href="/">
         <Image src="/logo.png" alt="Logo" width={50} height={50} />
-      </div>
-      <div className="flex items-center space-x-4">
+      </Link>
+      <div className="flex items-center">
+        <button onClick={toggleTheme} className="mr-4 text-xl">
+          {theme === "light" ? "🌞" : "🌜"}
+        </button>
         <a
-          href="https://github.com/your-repo"
+          href="https://github.com/theonlyhennygod/my-cal"
           target="_blank"
           rel="noopener noreferrer"
+          className="p-2"
         >
-          <FaGithub className="text-2xl text-gray-800 dark:text-white" />
+          <FaGithub className="text-black dark:text-white text-3xl" />
         </a>
-        <button onClick={toggleDarkMode}>
-          {darkMode ? (
-            <FaSun className="text-2xl text-yellow-400" />
-          ) : (
-            <FaMoon className="text-2xl text-gray-800" />
-          )}
-        </button>
       </div>
     </nav>
   );
 };
 
-export default Navbar;
+export default NavBar;
