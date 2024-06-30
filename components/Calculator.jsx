@@ -21,7 +21,7 @@ const Calculator = () => {
 
   const calculateResult = () => {
     try {
-      setResult(eval(input)); // Note: Using eval is not recommended for security reasons. Use a proper math library instead.
+      setResult(eval(input)); 
     } catch (error) {
       setResult("Error");
     }
